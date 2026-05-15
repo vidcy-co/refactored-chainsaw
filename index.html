@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CHANEL STREAMING</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#000;
+  color:#fff;
+  font-family:Arial,sans-serif;
+}
+
+/* HEADER */
+.header{
+  background:#111;
+  padding:12px 15px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border-bottom:1px solid #222;
+}
+
+.live-badge{
+  background:#ff0000;
+  color:#fff;
+  font-size:12px;
+  font-weight:bold;
+  padding:5px 10px;
+  border-radius:5px;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  0%{opacity:1}
+  50%{opacity:.5}
+  100%{opacity:1}
+}
+
+.header-title{
+  font-size:15px;
+  font-weight:bold;
+}
+
+/* VIDEO */
+.video-container{
+  position:relative;
+  width:100%;
+  max-width:900px;
+  margin:auto;
+  overflow:hidden;
+  background:#000;
+}
+
+.video-container video{
+  width:100%;
+  display:block;
+  background:#000;
+}
+
+/* PLAY BUTTON */
+.play-btn{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:rgba(0,0,0,.65);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:45px;
+  backdrop-filter:blur(4px);
+  cursor:pointer;
+}
+
+.buffering{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:none;
+}
+
+.loader{
+  width:45px;
+  height:45px;
+  border:5px solid rgba(255,255,255,.2);
+  border-top:5px solid #ff0000;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+.viewer{
+  position:absolute;
+  bottom:12px;
+  left:12px;
+  background:rgba(0,0,0,.7);
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+}
+
+/* CONTENT */
+.content{
+  padding:20px;
+  text-align:center;
+}
+
+.content h2{
+  margin-bottom:8px;
+  font-size:22px;
+}
+
+.content p{
+  color:#bbb;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+/* BUTTON */
+.btn{
+  width:100%;
+  max-width:500px;
+  margin:12px auto;
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(90deg,#ff0000,#b80000);
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  display:block;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.btn:hover{
+  opacity:.95;
+  transform:scale(.98);
+}
+
+.btn.secondary{
+  background:linear-gradient(90deg,#d60000,#800000);
+}
+
+.btn.third{
+  background:linear-gradient(90deg,#990000,#550000);
+}
+
+.note{
+  margin-top:15px;
+  color:#999;
+  font-size:12px;
+}
+
+</style>
+
+<!-- SOCIAL BAR -->
+<script type="text/javascript">
+(function() {
+
+  var s = document.createElement('script');
+
+  s.src = "https://haberdasherycorpse.com/ba/c5/e6/bac5e6f44c51970362ba277cbd193f09.js";
+
+  s.async = true;
+
+  document.head.appendChild(s);
+
+})();
+</script>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+
+  <div class="live-badge">LIVE</div>
+
+  <div class="header-title">
+    Streaming Channel
+  </div>
+
+</div>
+
+<!-- VIDEO -->
+<div class="video-container">
+
+<video autoplay muted loop playsinline controls>
+
+<source src="https://clikzone.online/Video/videoplayback.mp4" type="video/mp4">
+
+Browser tidak mendukung video.
+
+</video>
+
+<!-- PLAY -->
+<div class="play-btn" id="playBtn" onclick="playLive()">
+▶
+</div>
+
+<!-- BUFFER -->
+<div class="buffering" id="buffering">
+<div class="loader"></div>
+</div>
+
+<!-- VIEWERS -->
+<div class="viewer">
+🔴 LIVE • <span id="viewCount">2486</span> watching
+</div>
+
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<h2>Guru Bahasa Inggris</h2>
+
+<p>
+Klik video atau tombol di bawah untuk melanjutkan streaming.
+</p>
+
+<button class="btn" onclick="goAd()">
+▶ LANJUTKAN VIDEO
+</button>
+
+<button class="btn secondary" onclick="goAd()">
+📺 TONTON LAINNYA
+</button>
+
+<button class="btn third" onclick="goAd()">
+🔓 BUKA LIVE
+</button>
+
+<div class="note">
+Streaming tersedia untuk perangkat mobile
+</div>
+
+</div>
+
+<script>
+
+const adLink =
+"https://haberdasherycorpse.com/j3fui6ytnm?key=092f2be43fddb9558229dc233910d88c";
+
+/* REDIRECT */
+function goAd(){
+  window.location.href = adLink;
+}
+
+/* PLAY EFFECT */
+function playLive(){
+
+  document.getElementById("playBtn").style.display = "none";
+
+  document.getElementById("buffering").style.display = "block";
+
+  setTimeout(() => {
+
+    goAd();
+
+  },1200);
+
+}
+
+/* VIEWERS */
+let viewers = 2486;
+
+setInterval(() => {
+
+  viewers += Math.floor(Math.random()*10 - 4);
+
+  if(viewers < 1000){
+    viewers = 1000;
+  }
+
+  document.getElementById("viewCount").innerText =
+  viewers.toLocaleString();
+
+},2000);
+
+</script>
+
+</body>
+</html>
